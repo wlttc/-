@@ -1,1 +1,2 @@
-# course_management_system
+# 课程信息管理系统
+计算思维与程序实践I期末作业
