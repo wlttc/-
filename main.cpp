@@ -28,24 +28,24 @@ int main()
 		case 3:
 			c.class_in();
 			c.class_save();
-			cout << "¿Î³ÌÊä³öÍê³É£¬ÏÖÓĞ¿Î³ÌÈçÏÂ" << endl;
+			cout << "è¯¾ç¨‹è¾“å‡ºå®Œæˆï¼Œç°æœ‰è¯¾ç¨‹å¦‚ä¸‹" << endl;
 			c.class_out();
 			system("pause");
 			break;
 		case 4:
-			cout << "ÏÖÓĞ¿Î³ÌÈçÏÂ:" << endl;
+			cout << "ç°æœ‰è¯¾ç¨‹å¦‚ä¸‹:" << endl;
 			c.class_out();
 			c.class_revise();
-			cout << "¸üĞÂ³É¹¦£¬ÏÖÓĞ¿Î³ÌÈçÏÂ:" << endl;
+			cout << "æ›´æ–°æˆåŠŸï¼Œç°æœ‰è¯¾ç¨‹å¦‚ä¸‹:" << endl;
 			c.class_out();
 			c.class_save();
 			system("pause");
 			break;
 		case 5:
-			cout << "ÏÖÓĞ¿Î³ÌÈçÏÂ:" << endl;
+			cout << "ç°æœ‰è¯¾ç¨‹å¦‚ä¸‹:" << endl;
 			c.class_out();
 			c.class_delete();
-			cout << "¸üĞÂ³É¹¦£¬ÏÖÓĞ¿Î³ÌÈçÏÂ:" << endl;
+			cout << "æ›´æ–°æˆåŠŸï¼Œç°æœ‰è¯¾ç¨‹å¦‚ä¸‹:" << endl;
 			c.class_out();
 			c.class_save();
 			system("pause");
