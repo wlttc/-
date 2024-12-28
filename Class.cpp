@@ -18,13 +18,13 @@ Class::~Class()
 	ch = NULL;
 }
 
-void Class::class_in()//ÊäÈë¿Î³ÌĞÅÏ¢
+void Class::class_in()//è¾“å…¥è¯¾ç¨‹ä¿¡æ¯
 {
 	class_sort();
 	course* p;
 	course* a;
 	a = ch;
-	cout << "ÒÀ´ÎÊäÈë¿Î³Ì±àºÅ£¬¿Î³ÌÃû³Æ£¬¿Î³ÌĞÔÖÊ£¬×ÜÑ§Ê±£¬ÊÚ¿ÎÑ§Ê±£¬ÊµÑé/ÉÏ»úÑ§Ê±£¬Ñ§·Ö£¬¿ª¿ÎÑ§ÆÚ" << endl;
+	cout << "ä¾æ¬¡è¾“å…¥è¯¾ç¨‹ç¼–å·ï¼Œè¯¾ç¨‹åç§°ï¼Œè¯¾ç¨‹æ€§è´¨ï¼Œæ€»å­¦æ—¶ï¼Œæˆè¯¾å­¦æ—¶ï¼Œå®éªŒ/ä¸Šæœºå­¦æ—¶ï¼Œå­¦åˆ†ï¼Œå¼€è¯¾å­¦æœŸ" << endl;
 	p = new course;
 	cin >> p->id >> p->name >> p->character >> p->time >> p->time1 >> p->time2 >> p->credit >> p->term;
 	p->cn = a->cn;
@@ -32,69 +32,70 @@ void Class::class_in()//ÊäÈë¿Î³ÌĞÅÏ¢
 	a = a->cn;
 }
 
-void Class::class_out()//Êä³ö¿Î³ÌĞÅÏ¢
+void Class::class_out()//è¾“å‡ºè¯¾ç¨‹ä¿¡æ¯
 {
 	class_sort();
 	course* p;
-	cout << "¿Î³Ì±àºÅ" << '\t' << "¿Î³ÌÃû³Æ" << '\t' << "¿Î³ÌĞÔÖÊ" << '\t' << "×ÜÑ§Ê±" << '\t' << '\t' << "ÊÚ¿ÎÑ§Ê±" << '\t' << "ÊµÑé/ÉÏ»úÑ§Ê±" << '\t' << "Ñ§·Ö" << '\t' << '\t' << "¿ª¿ÎÑ§ÆÚ" << endl;
+	cout << "è¯¾ç¨‹åˆ—è¡¨ï¼š" << endl;
+	cout << "è¯¾ç¨‹ç¼–å·" << '\t' << "è¯¾ç¨‹åç§°" << '\t' << "è¯¾ç¨‹æ€§è´¨" << '\t' << "æ€»å­¦æ—¶" << '\t' << '\t' << "æˆè¯¾å­¦æ—¶" << '\t' << "å®éªŒ/ä¸Šæœºå­¦æ—¶" << '\t' << "å­¦åˆ†" << '\t' << '\t' << "å¼€è¯¾å­¦æœŸ" << endl;
 	for (p = ch->cn; p != NULL; p = p->cn)
 	{
 		cout << p->id << '\t' << '\t' << p->name << '\t' << '\t' << p->character << '\t' << '\t' << p->time << '\t' << '\t' << p->time1 << '\t' << '\t' << p->time2 << '\t' << '\t' << p->credit << '\t' << '\t' << p->term << endl;
 	}
 }
 
-void Class::class_find()//²éÕÒ¿Î³Ì
+void Class::class_find()//æŸ¥æ‰¾è¯¾ç¨‹
 {
 	course* p;
 	p = ch;
 	int m, k, a = 1;
 	string s;
-	cout << "Í¨¹ı¿Î³ÌĞÔÖÊ²éÑ¯Çë°´1£¬Í¨¹ıÑ§·Ö²éÑ¯Çë°´2" << endl;
+	cout << "é€šè¿‡è¯¾ç¨‹æ€§è´¨æŸ¥è¯¢è¯·æŒ‰1ï¼Œé€šè¿‡å­¦åˆ†æŸ¥è¯¢è¯·æŒ‰2" << endl;
 	cin >> m;
-	if (m == 1)//°´ĞÔÖÊ²éÑ¯
+	if (m == 1)//æŒ‰æ€§è´¨æŸ¥è¯¢
 	{
-		cout << "Òª²éÑ¯ÄÄÖÖ¿Î³Ì" << endl;
+		cout << "è¦æŸ¥è¯¢å“ªç§è¯¾ç¨‹" << endl;
 		cin >> s;
 		while (p != NULL)
 		{
 			if (p->character == s)
 			{
 				if (a == 1)
-					cout << "¿Î³Ì±àºÅ" << '\t' << "¿Î³ÌÃû³Æ" << '\t' << "¿Î³ÌĞÔÖÊ" << '\t' << "×ÜÑ§Ê±" << '\t' << '\t' << "ÊÚ¿ÎÑ§Ê±" << '\t' << "ÊµÑé/ÉÏ»úÑ§Ê±" << '\t' << "Ñ§·Ö" << '\t' << '\t' << "¿ª¿ÎÑ§ÆÚ" << endl;
+					cout << "è¯¾ç¨‹ç¼–å·" << '\t' << "è¯¾ç¨‹åç§°" << '\t' << "è¯¾ç¨‹æ€§è´¨" << '\t' << "æ€»å­¦æ—¶" << '\t' << '\t' << "æˆè¯¾å­¦æ—¶" << '\t' << "å®éªŒ/ä¸Šæœºå­¦æ—¶" << '\t' << "å­¦åˆ†" << '\t' << '\t' << "å¼€è¯¾å­¦æœŸ" << endl;
 				cout << p->id << '\t' << '\t' << p->name << '\t' << '\t' << p->character << '\t' << '\t' << p->time << '\t' << '\t' << p->time1 << '\t' << '\t' << p->time2 << '\t' << '\t' << p->credit << '\t' << '\t' << p->term << endl;
 				a++;
 			}
 			p = p->cn;
 		}
-		if (a == 1)  cout << "Î´²éÑ¯µ½¿Î³Ì" << endl;
+		if (a == 1)  cout << "æœªæŸ¥è¯¢åˆ°è¯¾ç¨‹" << endl;
 	}
-	else if (m == 2)//°´Ñ§·Ö²éÑ¯
+	else if (m == 2)//æŒ‰å­¦åˆ†æŸ¥è¯¢
 	{
-		cout << "Òª²éÑ¯Ñ§·ÖÎª¼¸µÄ¿Î³Ì" << endl;
+		cout << "è¦æŸ¥è¯¢å­¦åˆ†ä¸ºå‡ çš„è¯¾ç¨‹" << endl;
 		cin >> k;
 		while (p != NULL)
 		{
 			if (p->credit == k)
 			{
 				if (a == 1)
-					cout << "¿Î³Ì±àºÅ" << '\t' << "¿Î³ÌÃû³Æ" << '\t' << "¿Î³ÌĞÔÖÊ" << '\t' << "×ÜÑ§Ê±" << '\t' << '\t' << "ÊÚ¿ÎÑ§Ê±" << '\t' << "ÊµÑé/ÉÏ»úÑ§Ê±" << '\t' << "Ñ§·Ö" << '\t' << '\t' << "¿ª¿ÎÑ§ÆÚ" << endl;
+					cout << "è¯¾ç¨‹ç¼–å·" << '\t' << "è¯¾ç¨‹åç§°" << '\t' << "è¯¾ç¨‹æ€§è´¨" << '\t' << "æ€»å­¦æ—¶" << '\t' << '\t' << "æˆè¯¾å­¦æ—¶" << '\t' << "å®éªŒ/ä¸Šæœºå­¦æ—¶" << '\t' << "å­¦åˆ†" << '\t' << '\t' << "å¼€è¯¾å­¦æœŸ" << endl;
 				cout << p->id << '\t' << '\t' << p->name << '\t' << '\t' << p->character << '\t' << '\t' << p->time << '\t' << '\t' << p->time1 << '\t' << '\t' << p->time2 << '\t' << '\t' << p->credit << '\t' << '\t' << p->term << endl;
 				a++;
 			}
 			p = p->cn;
 		}
-		if (a == 1)  cout << "Î´²éÑ¯µ½¿Î³Ì" << endl;;
+		if (a == 1)  cout << "æœªæŸ¥è¯¢åˆ°è¯¾ç¨‹" << endl;;
 	}
-	else cout << "Ö¸Áî´íÎó" << endl;
+	else cout << "æŒ‡ä»¤é”™è¯¯" << endl;
 }
 
-void Class::class_delete()//É¾³ı¿Î³Ì
+void Class::class_delete()//åˆ é™¤è¯¾ç¨‹
 {
 	string k;
 	course* p, * a;
 	p = ch;
 	a = p;
-	cout << "ÊäÈëÒªÉ¾³ı¿Î³ÌµÄ±àºÅ" << endl;
+	cout << "è¾“å…¥è¦åˆ é™¤è¯¾ç¨‹çš„ç¼–å·" << endl;
 	cin >> k;
 	while (p->cn && p->id != k)
 	{
@@ -108,11 +109,11 @@ void Class::class_delete()//É¾³ı¿Î³Ì
 	}
 	else
 	{
-		cout << "Î´²éÑ¯µ½¿Î³Ì" << endl;
+		cout << "æœªæŸ¥è¯¢åˆ°è¯¾ç¨‹" << endl;
 	}
 }
 
-void Class::class_sort()//¶Ô¿Î³Ì½øĞĞÅÅĞò
+void Class::class_sort()//å¯¹è¯¾ç¨‹è¿›è¡Œæ’åº
 {
 	string name;
 	string character;
@@ -167,10 +168,10 @@ void Class::class_sort()//¶Ô¿Î³Ì½øĞĞÅÅĞò
 	}
 }
 
-void Class::class_revise()//ĞŞ¸Ä¿Î³ÌÊı¾İ
+void Class::class_revise()//ä¿®æ”¹è¯¾ç¨‹æ•°æ®
 {
 	string k;
-	cout << "ÊäÈëÒªĞŞ¸Ä¿Î³ÌµÄ±àºÅ" << endl;
+	cout << "è¾“å…¥è¦ä¿®æ”¹è¯¾ç¨‹çš„ç¼–å·" << endl;
 	cin >> k;
 	course* p;
 	p = ch;
@@ -180,14 +181,14 @@ void Class::class_revise()//ĞŞ¸Ä¿Î³ÌÊı¾İ
 	}
 	if (p->id == k)
 	{
-		cout << "ÊäÈë¿Î³ÌÃû³Æ£¬¿Î³ÌĞÔÖÊ£¬×ÜÑ§Ê±£¬ÊÚ¿ÎÑ§Ê±£¬ÊµÑé/ÉÏ»úÑ§Ê±£¬Ñ§·Ö£¬¿ª¿ÎÑ§ÆÚ" << endl;
+		cout << "è¾“å…¥è¯¾ç¨‹åç§°ï¼Œè¯¾ç¨‹æ€§è´¨ï¼Œæ€»å­¦æ—¶ï¼Œæˆè¯¾å­¦æ—¶ï¼Œå®éªŒ/ä¸Šæœºå­¦æ—¶ï¼Œå­¦åˆ†ï¼Œå¼€è¯¾å­¦æœŸ" << endl;
 		cin >> p->name >> p->character >> p->time >> p->time1 >> p->time2 >> p->credit >> p->term;
-		cout << "ĞŞ¸ÄÍê³É" << endl;
+		cout << "ä¿®æ”¹å®Œæˆ" << endl;
 	}
-	else cout << "Î´²éÑ¯µ½¿Î³Ì£¬ÇëÊäÈëÕıÈ·µÄ¿Î³Ì±àºÅ" << endl;
+	else cout << "æœªæŸ¥è¯¢åˆ°è¯¾ç¨‹ï¼Œè¯·è¾“å…¥æ­£ç¡®çš„è¯¾ç¨‹ç¼–å·" << endl;
 }
 
-//½«ÎÄ¼şÖĞµÄÊı¾İ²åÈëµ½Á´±íÖĞ
+//å°†æ–‡ä»¶ä¸­çš„æ•°æ®æ’å…¥åˆ°é“¾è¡¨ä¸­
 void Class::class_insert(string id, string name, string character, double time, double time1, double time2, double credit, int term)
 {
 	course* a;
@@ -206,13 +207,13 @@ void Class::class_insert(string id, string name, string character, double time, 
 	a->cn = p;
 }
 
-void Class::class_save()//±£´æÊı¾İ
+void Class::class_save()//ä¿å­˜æ•°æ®
 {
 	class_sort();
 	course* p;
 	p = ch->cn;
 	ofstream out("class.txt");
-	if (!out) { cout << "²»ÄÜ´ò¿ªÎÄ¼ş£¡" << endl; return; }
+	if (!out) { cout << "ä¸èƒ½æ‰“å¼€æ–‡ä»¶ï¼" << endl; return; }
 	while (p != NULL)
 	{
 		out << p->id << '\t' << p->name << '\t' << p->character << '\t' << p->time << '\t' << p->time1 << '\t' << p->time2 << '\t' << p->credit << '\t' << p->term << '\t' << endl;
@@ -221,7 +222,7 @@ void Class::class_save()//±£´æÊı¾İ
 	out.close();
 }
 
-void Class::class_read()//¶ÁÈëÊı¾İ
+void Class::class_read()//è¯»å…¥æ•°æ®
 {
 	course* p;
 	p = ch;
@@ -243,10 +244,10 @@ void Class::class_read()//¶ÁÈëÊı¾İ
 
 void menu()
 {
-	cout << "²é¿´ÒÑÓĞ¿Î³Ì  1" << endl;
-	cout << "²éÕÒ¿Î³Ì      2" << endl;
-	cout << "Ìí¼ÓĞÂ¿Î³Ì    3" << endl;
-	cout << "ĞŞ¸Ä¿Î³ÌĞÅÏ¢  4" << endl;
-	cout << "É¾³ı¿Î³Ì      5" << endl;
-	cout << "ÍË³öÏµÍ³      0" << endl;
+	cout << "æŸ¥çœ‹å·²æœ‰è¯¾ç¨‹  1" << endl;
+	cout << "æŸ¥æ‰¾è¯¾ç¨‹      2" << endl;
+	cout << "æ·»åŠ æ–°è¯¾ç¨‹    3" << endl;
+	cout << "ä¿®æ”¹è¯¾ç¨‹ä¿¡æ¯  4" << endl;
+	cout << "åˆ é™¤è¯¾ç¨‹      5" << endl;
+	cout << "é€€å‡ºç³»ç»Ÿ      0" << endl;
 }
