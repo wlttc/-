@@ -7,21 +7,21 @@ using namespace std;
 
 void menu();
 
-class course
+class course//链表对象类
 {
 public:
-	string id;
-	string name;
-	string character;
-	double time;
-	double time1;
-	double time2;
-	double credit;
-	int term;
-	course* cn;
+	string id;//课程编号
+	string name;//课程名称
+	string character;//课程性质
+	double time;//总学时
+	double time1;//授课学时
+	double time2;//实验/上机学时
+	double credit;//学分
+	int term;//开课学期
+	course* cn;//指向链表下一个对象的指针
 };
 
-class Class
+class Class//操作类
 {
 public:
 	void class_in();//输入课程
