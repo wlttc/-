@@ -28,24 +28,19 @@ int main()
 		case 3:
 			c.class_in();
 			c.class_save();
-			cout << "课程列表：" << endl;
 			c.class_out();
 			system("pause");
 			break;
 		case 4:
-			cout << "课程列表：" << endl;
 			c.class_out();
 			c.class_revise();
-			cout << "课程列表：" << endl;
 			c.class_out();
 			c.class_save();
 			system("pause");
 			break;
 		case 5:
-			cout << "课程列表：" << endl;
 			c.class_out();
 			c.class_delete();
-			cout << "课程列表：" << endl;
 			c.class_out();
 			c.class_save();
 			system("pause");
