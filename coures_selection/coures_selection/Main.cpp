@@ -1,51 +1,51 @@
 #include <iostream>
 #include "Class.h"
-
 using namespace std;
 
 int main()
 {
 	int k;
-	string m;
 	Class c;
-	c.class_read();
+	c.cread();
+
+
 	while (1)
 	{
 		system("cls");
 		menu();
 		cin >> k;
-		c.class_sort();
+		c.ccsort();
 		if (k == 1)
 		{
-			c.class_out();
+			c.coutput();
 			system("pause");
 		}
 		else if (k == 2)
 		{
-			c.class_find();
+			c.cfind();
 			system("pause");
 		}
 		else if (k == 3)
 		{
-			c.class_in();
-			c.class_save();
-			c.class_out();
+			c.cinput();
+			c.csave();
+			c.coutput();
 			system("pause");
 		}
 		else if (k == 4)
 		{
-			c.class_out();
-			c.class_revise();
-			c.class_out();
-			c.class_save();
+			c.coutput();
+			c.crevise();
+			c.coutput();
+			c.csave();
 			system("pause");
 		}
 		else if (k == 5)
 		{
-			c.class_out();
-			c.class_delete();
-			c.class_out();
-			c.class_save();
+			c.coutput();
+			c.cdelete();
+			c.coutput();
+			c.csave();
 			system("pause");
 		}
 		else if (k == 0)

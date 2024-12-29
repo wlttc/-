@@ -1,40 +1,23 @@
 #include"Class.h"
 
-Class::Class()//创建链表头
-{
-	ch = new course;
-	ch->cn = NULL;
-}
 
-Class::~Class()//销毁链表
-{
-	course* p;
-	while (ch)
-	{
-		p = ch;
-		ch = ch->cn;
-		delete p;
-	}
-	ch = NULL;
-}
 
-void Class::class_in()//输入课程信息
+void Class::cinput()//输入课程信息
 {
-	class_sort();
 	course* p;
 	course* a;
 	a = ch;
-	cout << "依次输入课程编号，课程名称，课程性质，总学时，授课学时，实验/上机学时，学分，开课学期" << endl;
 	p = new course;
+	cout << "依次输入课程编号，课程名称，课程性质，总学时，授课学时，实验/上机学时，学分，开课学期" << endl;
 	cin >> p->id >> p->name >> p->character >> p->time >> p->time1 >> p->time2 >> p->credit >> p->term;
 	p->cn = a->cn;
 	a->cn = p;
 	a = a->cn;
 }
 
-void Class::class_out()//输出课程信息
+void Class::coutput()//输出课程信息
 {
-	class_sort();
+	ccsort();
 	course* p;
 	cout << "课程信息：" << endl;
 	cout << "课程编号" << '\t' << "课程名称" << '\t' << "课程性质" << '\t' << "总学时" << '\t' << '\t' << "授课学时" << '\t' << "实验/上机学时" << '\t' << "学分" << '\t' << '\t' << "开课学期" << endl;
@@ -44,7 +27,7 @@ void Class::class_out()//输出课程信息
 	}
 }
 
-void Class::class_find()//查找课程
+void Class::cfind()//查找课程
 {
 	course* p;
 	p = ch;
@@ -67,7 +50,10 @@ void Class::class_find()//查找课程
 			}
 			p = p->cn;
 		}
-		if (a == 1)  cout << "未查询到课程" << endl;
+		if (a == 1)  
+			cout << "未查询到课程" << endl;
+		else
+			cout << "共查询到" << a - 1 << "门课程" << endl;
 	}
 	else if (m == 2)//按学分查询
 	{
@@ -84,12 +70,16 @@ void Class::class_find()//查找课程
 			}
 			p = p->cn;
 		}
-		if (a == 1)  cout << "未查询到课程" << endl;;
+		if (a == 1)
+			cout << "未查询到课程" << endl;
+		else
+			cout << "共查询到" << a - 1 << "门课程" << endl;
 	}
-	else cout << "指令错误" << endl;
+	else 
+		cout << "指令错误" << endl;
 }
 
-void Class::class_delete()//删除课程
+void Class::cdelete()//删除课程
 {
 	string k;
 	course* p, * a;
@@ -113,7 +103,7 @@ void Class::class_delete()//删除课程
 	}
 }
 
-void Class::class_sort()//对课程进行排序
+void Class::ccsort()//对课程进行排序
 {
 	string name;
 	string character;
@@ -134,7 +124,7 @@ void Class::class_sort()//对课程进行排序
 		for (j = 0; j < m - i - 1; j++)//冒泡排序
 		{
 			if (p1->id < p2->id)
-			{
+			{//交换p1，p2
 				id = p1->id;
 				name = p1->name;
 				time = p1->time;
@@ -168,7 +158,7 @@ void Class::class_sort()//对课程进行排序
 	}
 }
 
-void Class::class_revise()//修改课程数据
+void Class::crevise()//修改课程数据
 {
 	string k;
 	cout << "输入要修改课程的编号" << endl;
@@ -189,7 +179,7 @@ void Class::class_revise()//修改课程数据
 }
 
 //将文件中的数据插入到链表中
-void Class::class_insert(string id, string name, string character, double time, double time1, double time2, double credit, int term)
+void Class::cinsert(string id, string name, string character, double time, double time1, double time2, double credit, int term)
 {
 	course* a;
 	course* p;
@@ -207,9 +197,9 @@ void Class::class_insert(string id, string name, string character, double time, 
 	a->cn = p;
 }
 
-void Class::class_save()//保存数据
+void Class::csave()//保存数据
 {
-	class_sort();
+	ccsort();
 	course* p;
 	p = ch->cn;
 	ofstream out("class.txt");
@@ -218,7 +208,6 @@ void Class::class_save()//保存数据
 		cout << "不能打开文件" << endl; 
 		return; 
 	}
-		
 	while (p != NULL)
 	{
 		out << p->id << '\t' << p->name << '\t' << p->character << '\t' << p->time << '\t' << p->time1 << '\t' << p->time2 << '\t' << p->credit << '\t' << p->term << '\t' << endl;
@@ -227,7 +216,7 @@ void Class::class_save()//保存数据
 	out.close();
 }
 
-void Class::class_read()//读入数据
+void Class::cread()//读入数据
 {
 	course* p;
 	p = ch;
@@ -241,10 +230,17 @@ void Class::class_read()//读入数据
 	while (!in.eof())
 	{
 		in >> id >> name >> character >> time >> time1 >> time2 >> credit >> term;
-		if (in.fail()) break;
-		class_insert(id, name, character, time, time1, time2, credit, term);
+		if (in.fail()) 
+			break;
+		cinsert(id, name, character, time, time1, time2, credit, term);
 	}
 	in.close();
+}
+
+Class::Class()//创建链表头
+{
+	ch = new course;
+	ch->cn = NULL;
 }
 
 void menu()

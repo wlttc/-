@@ -24,18 +24,17 @@ public:
 class Class//操作类
 {
 public:
-	void class_in();//输入课程
-	void class_out();//输出课程
-	void class_read();//读取课程
-	void class_delete();//删除课程
-	void class_revise();//修改课程
-	void class_sort();//对课程进行排序
-	void class_find();//查找课程
-	void class_save();//保存课程
-	void class_insert(string id, string name, string character, double time, double time1, double time2, double credit, int term);		//将课程信息插入到链表中
-	course* ch;
-	~Class();
-	Class();
+	void cinput();//输入课程
+	void coutput();//输出课程
+	void cread();//读取课程
+	void cdelete();//删除课程
+	void crevise();//修改课程
+	void ccsort();//对课程进行排序
+	void cfind();//查找课程
+	void csave();//保存课程
+	void cinsert(string id, string name, string character, double time, double time1, double time2, double credit, int term);		//将课程信息插入到链表中
+	course* ch;//链表头
+	Class();//构造函数
 };
 
 
